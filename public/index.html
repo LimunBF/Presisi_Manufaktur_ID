@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PT. Presisi Manufaktur Indonesia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Presisi Manufaktur Indonesia - Ahli Permesinan Presisi</title>
 
-    <!-- Firebase SDK scripts -->
+    <!-- Firebase Initialization Scripts -->
     <script defer src="/__/firebase/11.10.0/firebase-app-compat.js"></script>
     <script defer src="/__/firebase/11.10.0/firebase-auth-compat.js"></script>
     <script defer src="/__/firebase/11.10.0/firebase-database-compat.js"></script>
@@ -17,131 +17,152 @@
     <script defer src="/__/firebase/11.10.0/firebase-remote-config-compat.js"></script>
     <script defer src="/__/firebase/11.10.0/firebase-performance-compat.js"></script>
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js" defer></script>
 
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Custom Styles -->
     <style>
-      body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f8f8; }
-      header { background-color: #003366; color: white; padding: 20px 0; text-align: center; }
-      header nav { margin-top: 20px; }
-      header nav ul { list-style: none; padding: 0; display: flex; justify-content: center; }
-      header nav ul li { margin: 0 20px; }
-      header nav ul li a { text-decoration: none; color: white; font-weight: bold; }
-
-      #hero { background-image: url('https://example.com/hero-image.jpg'); background-size: cover; height: 500px; display: flex; justify-content: center; align-items: center; text-align: center; color: white; }
-      #hero h1 { font-size: 50px; }
-
-      section { padding: 50px 0; text-align: center; }
-      .service-card { display: inline-block; width: 30%; margin: 20px; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-      .service-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
-      .service-card h3 { margin-top: 15px; font-size: 22px; }
-
-      .about-us, .contact { background-color: #003366; color: white; padding: 50px 0; }
-      .about-us h2, .contact h2 { font-size: 36px; margin-bottom: 20px; }
-      .contact form input, .contact form textarea { width: 80%; padding: 12px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
-
-      footer { background-color: #003366; color: white; padding: 20px 0; text-align: center; }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F8F9FA;
+        }
+        .font-heading {
+            font-family: 'Poppins', sans-serif;
+        }
+        .bg-hero {
+            background-image: url('https://images.unsplash.com/photo-1581092921462-63503b5d203a?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #FFC107;
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: #FFC107;
+            margin: 1rem auto 0;
+        }
+        .stat-item:not(:last-child) {
+            border-right: 2px solid rgba(47, 58, 79, 0.2);
+        }
+        @media (max-width: 768px) {
+            .stat-item:not(:last-child) {
+                border-right: none;
+                border-bottom: 2px solid rgba(47, 58, 79, 0.2);
+            }
+             .stat-item:last-child {
+                border-bottom: none;
+            }
+        }
     </style>
 </head>
-<body>
+<body class="text-gray-800">
 
-    <header>
-        <div class="logo">
-            <img src="img/logo.png" alt="PT. Presisi Manufaktur Indonesia" width="150">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Book Online</a></li>
-            </ul>
+    <!-- Header / Navigation -->
+    <header id="header" class="bg-[#1e293b] text-white shadow-lg sticky top-0 z-50 transition-all duration-300">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="flex items-center space-x-2">
+                <div class="bg-yellow-400 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                    </svg>
+                </div>
+                <span class="font-heading font-bold text-lg">PRESISI MANUFAKTUR</span>
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link font-medium hover:text-yellow-400">Beranda</a>
+                <a href="#services" class="nav-link font-medium hover:text-yellow-400">Layanan</a>
+                <a href="#about" class="nav-link font-medium hover:text-yellow-400">Tentang Kami</a>
+                <a href="#projects" class="nav-link font-medium hover:text-yellow-400">Proyek</a>
+                <a href="#contact" class="nav-link font-medium hover:text-yellow-400">Kontak</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-[#1e293b] px-6 pb-4">
+            <a href="#home" class="block py-2 nav-link font-medium hover:text-yellow-400">Beranda</a>
+            <a href="#services" class="block py-2 nav-link font-medium hover:text-yellow-400">Layanan</a>
+            <a href="#about" class="block py-2 nav-link font-medium hover:text-yellow-400">Tentang Kami</a>
+            <a href="#projects" class="block py-2 nav-link font-medium hover:text-yellow-400">Proyek</a>
+            <a href="#contact" class="block py-2 nav-link font-medium hover:text-yellow-400">Kontak</a>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <h1>Welcome to PT. Presisi Manufaktur Indonesia</h1>
-    </section>
-
-    <!-- Services Section -->
-    <section>
-        <h2>Our Services</h2>
-        <div class="service-card">
-            <img src="https://example.com/service1.jpg" alt="Permesinan Presisi">
-            <h3>Permesinan Presisi</h3>
-            <p>We offer precision machining services for automotive, agriculture, and general manufacturing needs.</p>
+    <main>
+        <!-- Firebase Hosting Content -->
+        <div id="message">
+            <h2>Welcome</h2>
+            <h1>Firebase Hosting Setup Complete</h1>
+            <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+            <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
         </div>
-        <div class="service-card">
-            <img src="https://example.com/service2.jpg" alt="Custom Component Fabrication">
-            <h3>Custom Component Fabrication</h3>
-            <p>Expert in manufacturing custom components with the highest precision based on your specific requirements.</p>
+        <p id="load">Firebase SDK Loading&hellip;</p>
+    </main>
+
+    <footer class="bg-gray-900 text-gray-400 py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 PT. Presisi Manufaktur Indonesia. All rights reserved.</p>
+            <p class="text-sm mt-1">Prototipe Website untuk Proyek Komputasi Awan.</p>
         </div>
-        <div class="service-card">
-            <img src="https://example.com/service3.jpg" alt="Quality Assurance">
-            <h3>Quality Assurance</h3>
-            <p>Our quality management system ensures every product meets high precision and industry standards.</p>
-        </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section class="about-us">
-        <h2>About Us</h2>
-        <p>PT. Presisi Manufaktur Indonesia is a leading provider of precision machining services in Indonesia. We specialize in delivering high-quality, precise components to industries such as automotive, agriculture, and more. Our team of experts ensures efficient and reliable service with a focus on customer satisfaction.</p>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <form action="#">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="tel" name="phone" placeholder="Your Phone" required>
-            <textarea name="message" placeholder="Your Message" rows="5"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2025 PT. Presisi Manufaktur Indonesia. All rights reserved.</p>
     </footer>
 
-    <!-- Firebase SDK Loading -->
-    <div id="message">
-        <h2>Welcome</h2>
-        <h1>Firebase Hosting Setup Complete</h1>
-        <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-        <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
-
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadEl = document.querySelector('#load');
+            try {
+                let app = firebase.app();
+                let features = [
+                    'auth', 'database', 'firestore', 'functions', 'messaging', 'storage', 'analytics', 'remoteConfig', 'performance',
+                ].filter(feature => typeof app[feature] === 'function');
+                loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
+            } catch (e) {
+                console.error(e);
+                loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
+            }
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Smooth scrolling for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    if (mobileMenu.classList.contains('hidden') === false) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
