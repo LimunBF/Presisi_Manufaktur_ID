@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Presisi Manufaktur Indonesia</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="PT. Presisi Manufaktur Indonesia">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Book Online</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section id="about-us">
+        <div class="content">
+            <h1>Tentang Kami</h1>
+            <p>PT. Presisi Manufaktur Indonesia adalah penyedia jasa permesinan presisi lokal yang selalu mengutamakan mutu dan ketepatan pada setiap produk yang kami hasilkan. Dengan dukungan tim yang ahli dan fasilitas yang memadai, kami siap membantu memenuhi berbagai kebutuhan para pelanggan dengan pengerjaan yang teliti dan efisien.</p>
+        </div>
+        <div class="image">
+            <img src="about-image.jpg" alt="About Us">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Servis Kami</h2>
+        <div class="service">
+            <img src="service1.jpg" alt="Permesinan Presisi">
+            <h3>Permesinan Presisi</h3>
+            <p>Kami menyediakan jasa permesinan presisi untuk berbagai kebutuhan industri. Kami siap mengerjakan komponen untuk otomotif, agrikultur, hingga manufaktur umum.</p>
+        </div>
+        <div class="service">
+            <img src="service2.jpg" alt="Fabrikasi Komponen Custom">
+            <h3>Fabrikasi Komponen Custom</h3>
+            <p>Kami ahli dalam pembuatan komponen sesuai pesanan (custom). Kami pastikan setiap produk dibuat dengan kualitas terbaik dan sesuai dengan permintaan spesifik Anda.</p>
+        </div>
+        <div class="service">
+            <img src="service3.jpg" alt="Jaminan Kualitas">
+            <h3>Jaminan Kualitas</h3>
+            <p>Sistem manajemen mutu kami yang teruji memastikan setiap produk memiliki tingkat presisi yang tinggi dan telah memenuhi standar industri yang berlaku.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Kontak Kami</h2>
+        <div id="map"></div>
+        <p>Hubungi tim ahli kami untuk mendapatkan estimasi biaya dan konsultasi teknis untuk proyek Anda. Unggah gambar desain Anda melalui formulir di samping untuk mendapatkan penawaran yang lebih akurat.</p>
+        <div class="contact-info">
+            <h3>Alamat</h3>
+            <p>Jl. Raya Solo - Yogyakarta, Pabelan, Kartasura, Sukoharjo 57168</p>
+            <h3>Jam Operasional</h3>
+            <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
+            <h3>Telepon</h3>
+            <p>(021) 123-456-7890</p>
+        </div>
+        <div class="contact-form">
+            <h3>Hubungi Kami</h3>
+            <form action="#">
+                <label for="name">Nama Lengkap</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="company">Nama Perusahaan</label>
+                <input type="text" id="company" name="company">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">No Telepon</label>
+                <input type="tel" id="phone" name="phone">
+
+                <label for="message">Pesan Tambahan</label>
+                <textarea id="message" name="message"></textarea>
+
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="partners">
+            <h3>Dipercaya Oleh</h3>
+            <ul>
+                <li><img src="partner1.png" alt="Partner 1"></li>
+                <li><img src="partner2.png" alt="Partner 2"></li>
+                <li><img src="partner3.png" alt="Partner 3"></li>
+                <li><img src="partner4.png" alt="Partner 4"></li>
+            </ul>
+        </div>
+        <p>&copy; 2025 PT. Presisi Manufaktur Indonesia. All rights reserved.</p>
+    </footer>
+</body>
+</html>
