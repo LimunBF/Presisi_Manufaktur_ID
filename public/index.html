@@ -20,26 +20,36 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
 
-    <!-- Custom styles -->
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
+
+    <!-- Custom Styles -->
+    <style>
+      body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f8f8; }
+      header { background-color: #003366; color: white; padding: 20px 0; text-align: center; }
+      header nav { margin-top: 20px; }
+      header nav ul { list-style: none; padding: 0; display: flex; justify-content: center; }
+      header nav ul li { margin: 0 20px; }
+      header nav ul li a { text-decoration: none; color: white; font-weight: bold; }
+
+      #hero { background-image: url('https://example.com/hero-image.jpg'); background-size: cover; height: 500px; display: flex; justify-content: center; align-items: center; text-align: center; color: white; }
+      #hero h1 { font-size: 50px; }
+
+      section { padding: 50px 0; text-align: center; }
+      .service-card { display: inline-block; width: 30%; margin: 20px; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+      .service-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+      .service-card h3 { margin-top: 15px; font-size: 22px; }
+
+      .about-us, .contact { background-color: #003366; color: white; padding: 50px 0; }
+      .about-us h2, .contact h2 { font-size: 36px; margin-bottom: 20px; }
+      .contact form input, .contact form textarea { width: 80%; padding: 12px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
+
+      footer { background-color: #003366; color: white; padding: 20px 0; text-align: center; }
     </style>
 </head>
 <body>
+
     <header>
         <div class="logo">
-            <img src="logo.png" alt="PT. Presisi Manufaktur Indonesia">
+            <img src="img/logo.png" alt="PT. Presisi Manufaktur Indonesia" width="150">
         </div>
         <nav>
             <ul>
@@ -53,89 +63,60 @@
         </nav>
     </header>
 
-    <section id="about-us">
-        <div class="content">
-            <h1>Tentang Kami</h1>
-            <p>PT. Presisi Manufaktur Indonesia adalah penyedia jasa permesinan presisi lokal yang selalu mengutamakan mutu dan ketepatan pada setiap produk yang kami hasilkan. Dengan dukungan tim yang ahli dan fasilitas yang memadai, kami siap membantu memenuhi berbagai kebutuhan para pelanggan dengan pengerjaan yang teliti dan efisien.</p>
-        </div>
-        <div class="image">
-            <img src="about-image.jpg" alt="About Us">
-        </div>
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Welcome to PT. Presisi Manufaktur Indonesia</h1>
     </section>
 
-    <section id="services">
-        <h2>Servis Kami</h2>
-        <div class="service">
-            <img src="service1.jpg" alt="Permesinan Presisi">
+    <!-- Services Section -->
+    <section>
+        <h2>Our Services</h2>
+        <div class="service-card">
+            <img src="https://example.com/service1.jpg" alt="Permesinan Presisi">
             <h3>Permesinan Presisi</h3>
-            <p>Kami menyediakan jasa permesinan presisi untuk berbagai kebutuhan industri. Kami siap mengerjakan komponen untuk otomotif, agrikultur, hingga manufaktur umum.</p>
+            <p>We offer precision machining services for automotive, agriculture, and general manufacturing needs.</p>
         </div>
-        <div class="service">
-            <img src="service2.jpg" alt="Fabrikasi Komponen Custom">
-            <h3>Fabrikasi Komponen Custom</h3>
-            <p>Kami ahli dalam pembuatan komponen sesuai pesanan (custom). Kami pastikan setiap produk dibuat dengan kualitas terbaik dan sesuai dengan permintaan spesifik Anda.</p>
+        <div class="service-card">
+            <img src="https://example.com/service2.jpg" alt="Custom Component Fabrication">
+            <h3>Custom Component Fabrication</h3>
+            <p>Expert in manufacturing custom components with the highest precision based on your specific requirements.</p>
         </div>
-        <div class="service">
-            <img src="service3.jpg" alt="Jaminan Kualitas">
-            <h3>Jaminan Kualitas</h3>
-            <p>Sistem manajemen mutu kami yang teruji memastikan setiap produk memiliki tingkat presisi yang tinggi dan telah memenuhi standar industri yang berlaku.</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Kontak Kami</h2>
-        <div id="map"></div>
-        <p>Hubungi tim ahli kami untuk mendapatkan estimasi biaya dan konsultasi teknis untuk proyek Anda. Unggah gambar desain Anda melalui formulir di samping untuk mendapatkan penawaran yang lebih akurat.</p>
-        <div class="contact-info">
-            <h3>Alamat</h3>
-            <p>Jl. Raya Solo - Yogyakarta, Pabelan, Kartasura, Sukoharjo 57168</p>
-            <h3>Jam Operasional</h3>
-            <p>Senin - Jumat: 08.00 - 16.00 WIB</p>
-            <h3>Telepon</h3>
-            <p>(021) 123-456-7890</p>
-        </div>
-        <div class="contact-form">
-            <h3>Hubungi Kami</h3>
-            <form action="#">
-                <label for="name">Nama Lengkap</label>
-                <input type="text" id="name" name="name" required>
-
-                <label for="company">Nama Perusahaan</label>
-                <input type="text" id="company" name="company">
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-
-                <label for="phone">No Telepon</label>
-                <input type="tel" id="phone" name="phone">
-
-                <label for="message">Pesan Tambahan</label>
-                <textarea id="message" name="message"></textarea>
-
-                <button type="submit">Kirim</button>
-            </form>
+        <div class="service-card">
+            <img src="https://example.com/service3.jpg" alt="Quality Assurance">
+            <h3>Quality Assurance</h3>
+            <p>Our quality management system ensures every product meets high precision and industry standards.</p>
         </div>
     </section>
 
+    <!-- About Us Section -->
+    <section class="about-us">
+        <h2>About Us</h2>
+        <p>PT. Presisi Manufaktur Indonesia is a leading provider of precision machining services in Indonesia. We specialize in delivering high-quality, precise components to industries such as automotive, agriculture, and more. Our team of experts ensures efficient and reliable service with a focus on customer satisfaction.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Contact Us</h2>
+        <form action="#">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="tel" name="phone" placeholder="Your Phone" required>
+            <textarea name="message" placeholder="Your Message" rows="5"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
     <footer>
-        <div class="partners">
-            <h3>Dipercaya Oleh</h3>
-            <ul>
-                <li><img src="partner1.png" alt="Partner 1"></li>
-                <li><img src="partner2.png" alt="Partner 2"></li>
-                <li><img src="partner3.png" alt="Partner 3"></li>
-                <li><img src="partner4.png" alt="Partner 4"></li>
-            </ul>
-        </div>
         <p>&copy; 2025 PT. Presisi Manufaktur Indonesia. All rights reserved.</p>
     </footer>
 
     <!-- Firebase SDK Loading -->
     <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+        <h2>Welcome</h2>
+        <h1>Firebase Hosting Setup Complete</h1>
+        <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
+        <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
     </div>
     <p id="load">Firebase SDK Loading&hellip;</p>
 
